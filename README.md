@@ -1,20 +1,23 @@
-# ReactNativeDemo
-RN demo
+# GitHub分支测试
+这里测试了在GitHub创建分支
+然后在本地分支内创建新文件，然后**只提交到远程分支中**
+（也就是说新提交的文件在远程主分支中看不到）
 
-## 知识点
-#### Flexbox
-1. flex
-RN中布局的一个属性，（前提，RN中布局也都是按照前端HTML盒子的性质来布局的）
-如果未设置，则控件根据自己设置的width、height值来改变，
-如果设置为1，且别的同级视图没有设置此属性，则根据和自己平级的view开始，占据父视图的剩余位置
-如果所有的同级视图都设置了此属性，则把父视图等比分为（所有flex值之和）份，按flex值占的比例来显示
+想法如下：
+先在本地分支中，把此分支和远程分支创建连接：
+此例中为newb分支
+`git branch --set-upstream-to=origin/newb`
+对应的取消连接命令如下：
+`git branch --unset-upstream xxx` xxx为分支名
 
-2. alignSelf
-相关的属性有：
-justifyContent: flex-start/flex-end/center/space-between/space-around
-alignItems: flex-start/flex-end/center/stretch
-flexDirection: row/column
-**jusityContent**属性**不会**从父视图继承
-**但是alignItem属性会继承**，因此如果我们父视图设置过了'center'属性，那么子视图也会默认布局为center，如果想要修改交叉轴的布局，但是又不想影响别的view,则可以使用alignSelf属性来修改。
-比如想要实现如下的效果：
+然后上传文件，测试中使用的是`2.html`文件
+```
+git push origin aaa:bbb
+```
+其中：aaa为本地分支，bbb为远程分支
+所以此处命令为：
+`git push origin newb:newb`
+此时，就能看到2.html文件只在newb分支中展示，master分支中没有
+*不知道不设置分支连接有没有影响*
+
 
