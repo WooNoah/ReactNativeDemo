@@ -22,3 +22,16 @@ git push origin aaa:bbb
 
 另一个测试文件`1.txt`，上传时的命令为：
 `git push origin newb`此时并没有指定本地分支和远程分支
+
+刚刚测试了文件`3.md`
+此时取消了连接
+即执行了命令：
+```
+git branch --unset-upstream newb
+然后新建3.md文件
+接着提交到本地仓库，然后提交远程仓库
+git push origin newb:newb
+```
+此时发现： 主分支中仍然没有此文件。
+说明：
+#### 只要执行push操作的时候指定本地和远程分支，分支的关联与否都没关系！！
