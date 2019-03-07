@@ -20,4 +20,5 @@ git push origin aaa:bbb
 此时，就能看到2.html文件只在newb分支中展示，master分支中没有
 *不知道不设置分支连接有没有影响*
 
-
+另一个测试文件`1.txt`，上传时的命令为：
+`git push origin newb`此时并没有指定本地分支和远程分支
